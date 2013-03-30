@@ -4,7 +4,7 @@ var options = {
 	//please don't steal me, you can find your own at https://developer.darkskyapp.com/ (it's free!)
 	APIKEY: '49ab673f7f424c0331500362d11a8460',
 	msgElem: ".answer h1",
-	minPrecip: 0.2,
+	minPrecip: 0.1,
 	hoursInFuture: 24,
 	states: {
 		error: "Give me an address.",
