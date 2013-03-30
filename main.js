@@ -81,7 +81,7 @@ function success(position, google) {
 	    		//check into the future
 	    		var rain = false;
 	    		for (var i = 0; i < data.hourly.data.length && i < options.hoursInFuture && !rain; i++) {
-	    			if (data.hourly.data[i].precipIntensity > 0 && data.hourly.data[i].precipType === 'rain') {
+	    			if (data.hourly.data[i].precipIntensity > options.minPrecip && data.hourly.data[i].precipType === 'rain') {
 	    				answer += " " + options.states.rain.later;
 	    				$("body").css({backgroundColor: options.states.rain.background});
 	    				rain = true;
