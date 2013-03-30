@@ -1,0 +1,76 @@
+/*simple reset*/
+* { padding: 0; margin: 0; }
+
+body {
+	-webkit-transition: background 300ms ease-in-out;
+	-moz-transition: background 300ms ease-in-out;
+    -ms-transition: background 300ms ease-in-out;
+    -o-transition: background 300ms ease-in-out;
+	transition: background 300ms ease-in-out;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+	background-color: #055D04;
+	font-size: 100%;
+}
+
+a { color: inherit; }
+
+.answer {
+	text-align: center;
+	margin: 20% auto;
+	padding: 0 8%;
+	font-size: 2.3em;
+}
+
+.error {
+	display: none;
+	margin-top: 30px;
+	padding-bottom: 30px;
+}
+	.error input {
+		position: relative;
+		top: -2px;
+		width: 60%;
+		height: 40px;
+		padding: 4px;
+		font-size: 0.6em;
+		background: #F2FAF2;
+		border: none;
+		border-bottom: 4px solid #B9BBB9;
+	}
+	.error button {
+		width: 60px;
+		height: 52px;
+		padding: 4px;
+		font-size: 0.6em;
+		background: #4E6F4D;
+		color: white;
+		border: none;
+	}
+
+.refresh {
+	color: white;
+	text-decoration: none;
+	position: fixed;
+	left: 2%;
+	top: 2%;
+	font-size: 2em;
+}
+
+footer {
+	font-size: 0.9em;
+	position: absolute;
+	bottom: 2px;
+	text-align: center;
+	width: 100%;
+}
+
+@media screen and (max-height: 500px) {
+	body {
+		font-size: 75%;
+	}
+	.answer {
+		margin: 5% auto;
+	}
+}
