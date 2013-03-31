@@ -19,7 +19,8 @@ var options = {
 			no: " Build a snowman for me.",
 			background: "#EFF7FA"
 		}
-	}
+	},
+	background: "#055D04"
 }
 
 $("document").ready(function() {
@@ -89,6 +90,7 @@ function success(position, google) {
 	    		}
 	    		//If I'm in the clear, change the icon to sunglasses!
 	    		if (!rain) {
+	    			$("body").css({backgroundColor: options.background });
 	    			$(options.msgElem).removeClass("umbrella").addClass("sunglasses");
 	    		}
 	    	}
