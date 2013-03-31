@@ -61,6 +61,8 @@ function success(position, google) {
 	    dataType: "jsonp",
 	    success: function(data) {
 	    	var answer = false;
+	    	var rain = false;
+	    	var other = false;
 	    	//is it currently raining?
 	    	if (data.currently.precipIntensity > 0 && data.currently.precipType === 'rain') {
 	    		answer = options.states.rain.yes;
@@ -77,10 +79,10 @@ function success(position, google) {
 	    			if (data.currently.precipType == message) {
 	    				answer += " " + options.states[message].no;
 	    				$("body").css({backgroundColor: options.states[message].background});
+	    				other = true;
 	    			}
 	    		}
 	    		//check into the future
-	    		var rain = false;
 	    		for (var i = 0; i < data.hourly.data.length && i < options.hoursInFuture && !rain; i++) {
 	    			if (data.hourly.data[i].precipIntensity > options.minPrecip && data.hourly.data[i].precipType === 'rain') {
 	    				answer += " " + options.states.rain.later;
@@ -90,7 +92,9 @@ function success(position, google) {
 	    		}
 	    		//If I'm in the clear, change the icon to sunglasses!
 	    		if (!rain) {
-	    			$("body").css({backgroundColor: options.background });
+	    			if (!other) {
+	    				$("body").css({backgroundColor: options.background });
+	    			}
 	    			$(options.msgElem).removeClass("umbrella").addClass("sunglasses");
 	    		}
 	    	}
